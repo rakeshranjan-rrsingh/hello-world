@@ -16,8 +16,11 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id:
-          id: "133981903-49829018"
+      - run: return 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
 
 
   save_hello_world:
