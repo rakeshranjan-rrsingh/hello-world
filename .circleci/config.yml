@@ -3,8 +3,12 @@ version: 2.1
 
 commands:
   print_pipeline_id:
+    parameters:
+      id:
+        type: string
+
     steps:
-      - run: echo ${CIRCLE_WORKFLOW_ID}
+      - run: echo << parameters.id >>
 
 jobs:
 
@@ -12,7 +16,8 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id
+      - print_pipeline_id:
+          id: "133981903-49829018"
 
 
   save_hello_world:
