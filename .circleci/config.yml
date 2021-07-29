@@ -18,7 +18,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - run: cat ~/out/txt"
+      - run: cat ~/out.txt
   
   print_owner:
     docker:
